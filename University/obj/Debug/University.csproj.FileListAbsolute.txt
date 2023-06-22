@@ -1,0 +1,15 @@
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\University.exe.config
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\University.exe
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\University.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\Guna.UI2.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.csproj.AssemblyReference.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.csproj.SuggestedBindingRedirects.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.Properties.Resources.resources
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.csproj.GenerateResource.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.csproj.CoreCompileInputs.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.csproj.CopyComplete
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.exe
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\UniversityClassLib.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\UniversityClassLib.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\University.LoginForm.resources

@@ -1,0 +1,6 @@
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.csproj.AssemblyReference.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.csproj.CoreCompileInputs.cache
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\UniversityClassLib.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\UniversityClassLib.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.pdb

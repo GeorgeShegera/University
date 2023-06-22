@@ -8,6 +8,13 @@ namespace University
 {
     internal static class Program
     {
+        private static readonly string connectionString = "Server=GEORGE;Database=University;Trusted_Connection=True;";
+
+        private void LoadDataBase(string connectionString)
+        {
+
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +23,7 @@ namespace University
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
