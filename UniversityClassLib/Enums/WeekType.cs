@@ -8,7 +8,7 @@ namespace UniversityClassLib.Enums
 {
     public enum WeekType
     {
-        Even,
+        Even = 1,
         Odd,
         Every
     }

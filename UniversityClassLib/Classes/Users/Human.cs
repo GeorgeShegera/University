@@ -10,13 +10,13 @@ namespace UniversityClassLib
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public Human(string name, string surname, DateTime date)
         {
             Name = name;
             Surname = surname;
-            DateTime = date;
+            BirthDate = date;
         }
 
         public Human() : this("", "", DateTime.Now) { }

@@ -8,7 +8,7 @@ namespace UniversityClassLib.Enums
 {
     public enum TaskState
     {
-        Assigned,
+        Assigned = 1,
         None,
         Done
     }

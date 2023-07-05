@@ -284,7 +284,7 @@
             this.panel_Register2.Controls.Add(this.tbUsername);
             this.panel_Register2.Controls.Add(this.lb_Register);
             this.panel_Register2.Controls.Add(this.btnCreateAccount);
-            this.panel_Register2.Location = new System.Drawing.Point(12, 42);
+            this.panel_Register2.Location = new System.Drawing.Point(281, 42);
             this.panel_Register2.Name = "panel_Register2";
             this.panel_Register2.Size = new System.Drawing.Size(224, 350);
             this.panel_Register2.TabIndex = 9;
@@ -472,7 +472,7 @@
             this.panel_Register1.Controls.Add(this.label3);
             this.panel_Register1.Controls.Add(this.tbName);
             this.panel_Register1.Controls.Add(this.btnContinue);
-            this.panel_Register1.Location = new System.Drawing.Point(285, 42);
+            this.panel_Register1.Location = new System.Drawing.Point(12, 42);
             this.panel_Register1.Name = "panel_Register1";
             this.panel_Register1.Size = new System.Drawing.Size(224, 350);
             this.panel_Register1.TabIndex = 9;

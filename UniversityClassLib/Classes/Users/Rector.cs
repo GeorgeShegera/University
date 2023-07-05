@@ -8,8 +8,8 @@ namespace UniversityClassLib
 {
     public class Rector : User
     {
-        public Rector(string username, string password, string name,
-             string surname, DateTime date)
-        : base(username, password, name, surname, date) { }
+        public Rector(int id, string username, string password, string name,
+             string surname, DateTime date, string email)
+        : base(id, username, password, name, surname, date, email) { }
     }
 }

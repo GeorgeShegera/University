@@ -12,13 +12,15 @@ namespace UniversityClassLib
         public string AcademicStatus { get; set; }
         public string ScientificIdentifiers { get; set; }
 
-        public Lecturer(string scientificDegree, string academicStatus, string username,
-            string password, string name, string surname, DateTime date, string scientificIdentifiers)
-            : base(username, password, name, surname, date)
+        public Lecturer(int id, string scientificDegree, string academicStatus, string username,
+            string password, string name, string surname, DateTime date, string scientificIdentifiers, string email)
+            : base(id, username, password, name, surname, date, email)
         {
             ScientificDegree = scientificDegree;
             AcademicStatus = academicStatus;
             ScientificIdentifiers = scientificIdentifiers;
         }
+        public Lecturer() : this(default, "", "", "", "", "", "", default, "", null) { }
+        public Lecturer(int id) : this(id, "", "", "", "", "", "", default, "", null) { }
     }
 }

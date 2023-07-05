@@ -9,6 +9,7 @@ namespace UniversityClassLib
 {
     public class Class
     {
+        public int Id { get; }
         public Subject Subject { get; set; }
         public DayOfWeek DayOfWeek { get; set; }
         public WeekType WeekType { get; set; }
@@ -16,9 +17,10 @@ namespace UniversityClassLib
         public TimeSpan EndTime { get; set; }
         public ClassType Type { get; set; }
         public Lecturer Lecturer { get; set; }
-        public Class(Subject subject, DayOfWeek dayOfWeek, WeekType weekType,
+        public Class(int id, Subject subject, DayOfWeek dayOfWeek, WeekType weekType,
                        TimeSpan startTime, TimeSpan endTime, ClassType type, Lecturer lecturer)
         {
+            Id = id;
             Subject = subject;
             DayOfWeek = dayOfWeek;
             WeekType = weekType;
@@ -27,5 +29,6 @@ namespace UniversityClassLib
             Type = type;
             Lecturer = lecturer;
         }
+        public Class(int id) : this(id, new Subject(), default, default, default, default, default, new Lecturer()) { }
     }
 }

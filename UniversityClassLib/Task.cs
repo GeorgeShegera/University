@@ -9,6 +9,7 @@ namespace UniversityClassLib
 {
     public class Task
     {
+        public int Id { get; }
         public string Title { get; set; }
         public string Description { get; set; }
         public TaskState State { get; set; }
@@ -17,6 +18,21 @@ namespace UniversityClassLib
         public Subject Subject { get; set; }
         public int Points { get; set; }
         public int Rated { get; set; }
-        public Student AssignedStudent { get; set; }
+        public int AssignedStudentId { get; set; }
+        public Task(int id, string title, string description, TaskState state, DateTime deadLine,
+                DateTime publicationDate, Subject subject, int points, int rated, int assignedStudentId)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+            State = state;
+            DeadLine = deadLine;
+            PublicationDate = publicationDate;
+            Subject = subject;
+            Points = points;
+            Rated = rated;
+            AssignedStudentId = assignedStudentId;
+        }
+        public Task(int id) : this(id, "", "", default, default, default, new Subject(), 0, 0, default) { }
     }
 }

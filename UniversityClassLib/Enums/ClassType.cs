@@ -8,9 +8,8 @@ namespace UniversityClassLib
 {
     public enum ClassType
     {
-         Lecture,
-         Practice,
-         Laboratory,
-         Exam
+        Lecture = 1,
+        Practice,
+        Laboratory
     }
 }
