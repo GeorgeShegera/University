@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using UniversityClassLib;
 using System.Data;
 using UniversityClassLib.Enums;
+using University.Structs;
+using System.Web.Security;
 
 namespace University
 {
@@ -37,34 +39,31 @@ namespace University
                 List<Subject> subjects = new List<Subject>();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    if (reader.HasRows)
+                    while (reader.Read())
                     {
-                        while (reader.Read())
+                        subjects.Add(new Subject(reader.GetInt32(0))
                         {
-                            subjects.Add(new Subject(reader.GetInt32(0))
-                            {
-                                Name = reader.GetString(1),
-                                PassMark = reader.GetFloat(2),
-                                Lecturer = lerturers.Find(x => x.Id == reader.GetInt32(3))
-                            });
-                        }
+                            Name = reader.GetString(1),
+                            PassMark = reader.GetFloat(2),
+                            Lecturer = lerturers.Find(x => x.Id == reader.GetInt32(3))
+                        });
                     }
                 }
-                // Get Marks
+                // Marks
+                List<StudentMark> studentsMarks = new List<StudentMark>();
                 cmd.CommandText = "GetMarks";
-                List<Mark> marks = new List<Mark>();
-                List<int> studentIds = new List<int>();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        marks.Add(new Mark
+                        Mark mark = new Mark
                         {
                             Id = reader.GetInt32(0),
                             Value = reader.GetFloat(1),
                             Subject = subjects.Find(x => x.Id == reader.GetInt32(3))
-                        });
-                        studentIds.Add(reader.GetInt32(4));
+                        };
+                        int studentId = reader.GetInt32(4);
+                        studentsMarks.Add(new StudentMark(studentId, mark));
                     }
                 }
                 // Get Students
@@ -72,13 +71,13 @@ namespace University
                 List<Student> students = new List<Student>();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    List<Mark> studentMarks = new List<Mark>();
+                    List<Mark> marks = new List<Mark>();
                     while (reader.Read())
                     {
                         int studentId = reader.GetInt32(0);
-                        for (int i = 0; i < marks.Count; i++)
+                        foreach (StudentMark mark in studentsMarks)
                         {
-                            if (studentId == studentIds[i]) studentMarks.Add(marks[i]);
+                            if (mark.studentId == studentId) marks.Add(mark.markValue);
                         }
                         students.Add(new Student(studentId)
                         {
@@ -88,7 +87,7 @@ namespace University
                             Email = reader.GetString(4),
                             Password = reader.GetString(5),
                             Username = reader.GetString(6),
-                            Marks = studentMarks
+                            Marks = marks
                         });
                     }
                 }
@@ -114,26 +113,28 @@ namespace University
                 // Get Tasks
                 cmd.CommandText = "GetTasks";
                 List<Task> tasks = new List<Task>();
-                List<int> groupsIds = new List<int>();
+                List<int> tasksGroupsId = new List<int>();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         tasks.Add(new Task(reader.GetInt32(0))
                         {
-                             Title = reader.GetString(1),
-                             Description = reader.GetString(2),
-                             State = (TaskState)reader.GetInt32(4),
-                             DeadLine = reader.GetDateTime(5),
-                             PublicationDate = reader.GetDateTime(6),
-                             Points = reader.GetInt32(7),
-                             Rated = reader.GetInt32(8),
-                             AssignedStudentId = reader.GetInt32(9),
-                             Subject = subjects.Find(x => x.Id == reader.GetInt32(10))
+                            Title = reader.GetString(1),
+                            Description = reader.GetString(2),
+                            State = (TaskState)reader.GetInt32(4),
+                            DeadLine = reader.GetDateTime(5),
+                            PublicationDate = reader.GetDateTime(6),
+                            Points = reader.GetInt32(7),
+                            Rated = reader.GetInt32(8),
+                            AssignedStudentId = reader.GetInt32(9),
+                            Subject = subjects.Find(x => x.Id == reader.GetInt32(10))
                         });
-                        groupsIds.Add(reader.GetInt32(3));
+                        tasksGroupsId.Add(reader.GetInt32(3));
                     }
                 }
+                // Groups
+
             }
         }
 
