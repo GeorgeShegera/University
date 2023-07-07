@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace University.Properties {
+namespace UniversityNamespace.Properties {
     using System;
     
     

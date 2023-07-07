@@ -5,10 +5,10 @@ using System.Windows.Forms;
 using UniversityClassLib;
 using System.Data;
 using UniversityClassLib.Enums;
-using University.Structs;
+using UniversityNamespace.Structs;
 using System.Web.Security;
 
-namespace University
+namespace UniversityNamespace
 {
     internal static class Program
     {
@@ -50,7 +50,7 @@ namespace University
                     }
                 }
                 // Marks
-                List<StudentMark> studentsMarks = new List<StudentMark>();
+                List<KeyValueEntry<Mark, int>> studentsMarks = new List<KeyValueEntry<Mark, int>>();
                 cmd.CommandText = "GetMarks";
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -63,7 +63,7 @@ namespace University
                             Subject = subjects.Find(x => x.Id == reader.GetInt32(3))
                         };
                         int studentId = reader.GetInt32(4);
-                        studentsMarks.Add(new StudentMark(studentId, mark));
+                        studentsMarks.Add(new KeyValueEntry<Mark, int>(studentId, mark));
                     }
                 }
                 // Get Students
@@ -75,9 +75,9 @@ namespace University
                     while (reader.Read())
                     {
                         int studentId = reader.GetInt32(0);
-                        foreach (StudentMark mark in studentsMarks)
+                        foreach (var mark in studentsMarks)
                         {
-                            if (mark.studentId == studentId) marks.Add(mark.markValue);
+                            if (mark.id == studentId) marks.Add(mark.value);
                         }
                         students.Add(new Student(studentId)
                         {
