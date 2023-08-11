@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UniversityClassLib;
-using UniversityClassLib.Enums;
 using System.Data;
-using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using UniversityClassLib;
 
 namespace University
 {
@@ -72,7 +67,7 @@ namespace University
         {
             string query = @"SELECT G.Id, G.Name, G.Year, G.StatusId
                              FROM [Groups] AS G
-                             WHERE G.FacultyId = @facultyId";
+                             WHERE G.FacultyId = @facultyId;";
             List<Group> groups = new List<Group>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -101,6 +96,44 @@ namespace University
         }
 
         private static List<Student> LoadStudents(int groupId)
+        {
+            string query = @"SELECT S.Id, H.Name, H.Surname, H.BirthDate, 
+                                    U.Email, U.Username, U.Password,
+		                            S.StatusId
+	                         FROM [Students] AS S
+	                         INNER JOIN [Users] AS U ON U.Id = S.UserId
+                             INNER JOIN [Humans] AS H ON H.Id = U.HumanId
+                             INNER JOIN [GroupsStudents] AS GS
+	                         ON GS.GroupId = @groupId AND GS.StudentId = S.Id;";
+            List<Student> students = new List<Student>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlParameter sqlParameter = new SqlParameter
+                {
+                    ParameterName = "@groupId",
+                    Value = groupId
+                };
+                cmd.Parameters.Add(sqlParameter);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    int studentId = Convert.ToInt32(reader["Id"]);
+                    students.Add(new Student(LoadUser(reader))
+                    {
+                        Status = (StudentStatus)Convert.ToInt32(reader["StatusId"]),
+                        Marks = LoadMarks(studentId),
+                        Tasks = LoadTasks(studentId)
+                    });
+                }
+            }
+            return students;
+        }
+        private static List<Mark> LoadMarks(int studentId)
+        {
+
+        }
+
+        private static List<StudentTask> LoadTasks(int studentId)
         {
 
         }
@@ -134,15 +167,9 @@ namespace University
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    lecturers.Add(new Lecturer(Convert.ToInt32(reader["Id"]))
+                    lecturers.Add(new Lecturer(LoadUser(reader))
                     {
-                        Name = Convert.ToString(reader["Name"]),
-                        Surname = Convert.ToString(reader["Surname"]),
-                        BirthDate = Convert.ToDateTime(reader["BirthDate"]),
                         Status = (LecturerStatus)Convert.ToInt32(reader["StatusId"]),
-                        Username = Convert.ToString(reader["Username"]),
-                        Password = Convert.ToString(reader["Password"]),
-                        Email = Convert.ToString(reader["Email"]),
                         ScientificDegree = Convert.ToString(reader["ScientificDegree"]),
                         AcademicStatus = Convert.ToString(reader["AcademicStatus"]),
                         ScientificIdentifiers = Convert.ToString(reader["SI"])
@@ -171,19 +198,26 @@ namespace University
                 };
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    rector = new Rector(Convert.ToInt32(reader["Id"]))
+                    rector = new Rector(LoadUser(reader))
                     {
-                        Name = Convert.ToString(reader["Name"]),
-                        Surname = Convert.ToString(reader["Surname"]),
-                        Status = (RectorStatus)Convert.ToInt32(reader["StatusId"]),
-                        BirthDate = Convert.ToDateTime(reader["BirthDate"]),
-                        Email = Convert.ToString(reader["Email"]),
-                        Password = Convert.ToString(reader["Password"]),
-                        Username = Convert.ToString(reader["Username"])
+                        Status = (RectorStatus)Convert.ToInt32(reader["StatusId"])
                     };
                 }
             }
             return rector;
+        }
+
+        private static User LoadUser(SqlDataReader reader)
+        {
+            return new User(Convert.ToInt32(reader["Id"]))
+            {
+                Name = Convert.ToString(reader["Name"]),
+                Surname = Convert.ToString(reader["Surname"]),
+                BirthDate = Convert.ToDateTime(reader["BirthDate"]),
+                Email = Convert.ToString(reader["Email"]),
+                Password = Convert.ToString(reader["Password"]),
+                Username = Convert.ToString(reader["Username"]),
+            };
         }
     }
 }

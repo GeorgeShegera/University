@@ -8,7 +8,7 @@ namespace UniversityClassLib
 {
     public enum StudentStatus
     {
-        Undergraduate,
+        Undergraduate = 1,
         Graduate,
         Postgraduate,
         International,

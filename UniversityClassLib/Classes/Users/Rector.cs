@@ -18,5 +18,11 @@ namespace UniversityClassLib
         {
             Status = status;
         }
+
+        public Rector(User user = default, RectorStatus status = default)
+                : base(user)
+        {
+            Status = status;
+        }
     }
 }

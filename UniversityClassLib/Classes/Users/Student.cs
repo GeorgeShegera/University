@@ -12,21 +12,24 @@ namespace UniversityClassLib
         public List<Task> Tasks { get; set; }
         public StudentStatus Status { get; set; }
 
-        public Student(int id, List<Mark> marks, string username, string password,
-                       string name, string surname, DateTime date,
-                       string email, List<Task> tasks)
+        public Student(int id = default, List<Mark> marks = default,
+                       string username = default, string password = default,
+                       string name = default, string surname = default,
+                       DateTime date = default, string email = default,
+                       List<Task> tasks = default, StudentStatus status = default)
             : base(id, username, password, name, surname, date, email)
         {
             Marks = marks;
             Tasks = tasks;
+            Status = status;
         }
-
-        public Student() : this(default, new List<Mark>(), "", "",
-                                "", "", DateTime.Now, "", default)
-        { }
-
-        public Student(int id) : this(id, new List<Mark>(), "", "",
-                                      "", "", DateTime.Now, "", default)
-        { }
+        public Student(User user, List<Mark> marks = default,
+                       List<Task> task = default, StudentStatus status = default)
+            : base(user)
+        {
+            Marks = marks;
+            Tasks = task;
+            Status = status;
+        }
     }
 }

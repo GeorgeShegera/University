@@ -7,7 +7,7 @@ using UniversityClassLib.Enums;
 
 namespace UniversityClassLib
 {
-    public class Task
+    public class StudentTask
     {
         public int Id { get; }
         public string Title { get; set; }
@@ -19,7 +19,7 @@ namespace UniversityClassLib
         public int Points { get; set; }
         public int Rated { get; set; }
         public int AssignedStudentId { get; set; }
-        public Task(int id, string title, string description, TaskState state, DateTime deadLine,
+        public StudentTask(int id, string title, string description, TaskState state, DateTime deadLine,
                 DateTime publicationDate, Subject subject, int points, int rated, int assignedStudentId)
         {
             Id = id;
@@ -33,7 +33,7 @@ namespace UniversityClassLib
             Rated = rated;
             AssignedStudentId = assignedStudentId;
         }
-        public Task(int id) : this(id, "", "", default, default, default,
+        public StudentTask(int id) : this(id, "", "", default, default, default,
                                    new Subject(), 0, 0, default)
         { }
     }
