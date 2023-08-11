@@ -1,4 +1,4 @@
-﻿namespace UniversityNamespace
+﻿namespace University
 {
     partial class LoginForm
     {
@@ -176,7 +176,7 @@
             // 
             // pbUniversity
             // 
-            this.pbUniversity.Image = global::UniversityNamespace.Properties.Resources.UniversityImg;
+            this.pbUniversity.Image = global::University.Properties.Resources.UniversityImg;
             this.pbUniversity.ImageRotate = 0F;
             this.pbUniversity.Location = new System.Drawing.Point(0, -1);
             this.pbUniversity.Name = "pbUniversity";
@@ -214,7 +214,7 @@
             this.tbUsernameLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbUsernameLogin.ForeColor = System.Drawing.Color.Black;
             this.tbUsernameLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsernameLogin.IconLeft = global::UniversityNamespace.Properties.Resources.icon_user;
+            this.tbUsernameLogin.IconLeft = global::University.Properties.Resources.icon_user;
             this.tbUsernameLogin.Location = new System.Drawing.Point(3, 55);
             this.tbUsernameLogin.Name = "tbUsernameLogin";
             this.tbUsernameLogin.PasswordChar = '\0';
@@ -240,7 +240,7 @@
             this.tbPasswordLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPasswordLogin.ForeColor = System.Drawing.Color.Black;
             this.tbPasswordLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPasswordLogin.IconLeft = global::UniversityNamespace.Properties.Resources.icon_password;
+            this.tbPasswordLogin.IconLeft = global::University.Properties.Resources.icon_password;
             this.tbPasswordLogin.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.tbPasswordLogin.Location = new System.Drawing.Point(3, 115);
             this.tbPasswordLogin.Name = "tbPasswordLogin";
@@ -267,7 +267,7 @@
             this.btnCreateAccLogin.FillColor = System.Drawing.Color.Transparent;
             this.btnCreateAccLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnCreateAccLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCreateAccLogin.Image = global::UniversityNamespace.Properties.Resources.icon_arrow_right;
+            this.btnCreateAccLogin.Image = global::University.Properties.Resources.icon_arrow_right;
             this.btnCreateAccLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnCreateAccLogin.Location = new System.Drawing.Point(3, 288);
             this.btnCreateAccLogin.Name = "btnCreateAccLogin";
@@ -319,7 +319,7 @@
             this.tbGroupName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbGroupName.ForeColor = System.Drawing.Color.Black;
             this.tbGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGroupName.IconLeft = global::UniversityNamespace.Properties.Resources.icon_name_tag;
+            this.tbGroupName.IconLeft = global::University.Properties.Resources.icon_name_tag;
             this.tbGroupName.Location = new System.Drawing.Point(3, 171);
             this.tbGroupName.Name = "tbGroupName";
             this.tbGroupName.PasswordChar = '\0';
@@ -344,7 +344,7 @@
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPassword.ForeColor = System.Drawing.Color.Black;
             this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPassword.IconLeft = global::UniversityNamespace.Properties.Resources.icon_password;
+            this.tbPassword.IconLeft = global::University.Properties.Resources.icon_password;
             this.tbPassword.Location = new System.Drawing.Point(3, 115);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '●';
@@ -369,7 +369,7 @@
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbUsername.ForeColor = System.Drawing.Color.Black;
             this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.IconLeft = global::UniversityNamespace.Properties.Resources.icon_user;
+            this.tbUsername.IconLeft = global::University.Properties.Resources.icon_user;
             this.tbUsername.Location = new System.Drawing.Point(3, 70);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.PasswordChar = '\0';
@@ -543,7 +543,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.IconLeft = global::UniversityNamespace.Properties.Resources.icon_email;
+            this.tbEmail.IconLeft = global::University.Properties.Resources.icon_email;
             this.tbEmail.Location = new System.Drawing.Point(3, 190);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
@@ -579,7 +579,7 @@
             this.btnContinue.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(123)))), ((int)(((byte)(249)))));
             this.btnContinue.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Image = global::UniversityNamespace.Properties.Resources.icon_arrow_right_white;
+            this.btnContinue.Image = global::University.Properties.Resources.icon_arrow_right_white;
             this.btnContinue.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnContinue.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnContinue.Location = new System.Drawing.Point(3, 258);

@@ -50,11 +50,15 @@
     <Compile Include="Enums\WeekType.cs" />
     <Compile Include="Faculty.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="Enums\LecturerStatus.cs" />
+    <Compile Include="Enums\GroupStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Users\User.cs" />
     <Compile Include="Classes\Users\Student.cs" />
     <Compile Include="Classes\Users\Rector.cs" />
     <Compile Include="Classes\Subject.cs" />
+    <Compile Include="Enums\StudentStatus.cs" />
+    <Compile Include="Enums\RectorStatus.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="University.cs" />
   </ItemGroup>

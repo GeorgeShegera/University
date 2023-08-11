@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UniversityClassLib;
 
-namespace UniversityNamespace.Structs
+namespace University.Structs
 {
     internal struct KeyValueEntry<T, K>
     {

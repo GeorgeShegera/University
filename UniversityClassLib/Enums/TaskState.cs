@@ -8,8 +8,10 @@ namespace UniversityClassLib.Enums
 {
     public enum TaskState
     {
-        Assigned = 1,
-        None,
-        Done
+        ToDo = 1,
+        InReview,
+        Completed,
+        Rejected,
+        Canceled
     }
 }

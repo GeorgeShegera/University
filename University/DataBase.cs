@@ -9,7 +9,7 @@ using UniversityClassLib.Enums;
 using System.Data;
 using System.Runtime.InteropServices;
 
-namespace UniversityNamespace
+namespace University
 {
     internal static class DataBase
     {
@@ -17,16 +17,16 @@ namespace UniversityNamespace
         private const string connectionString = @"Server=GEORGE;
                                                   Database=University;
                                                   Trusted_Connection=True;";
-        public static University University { get; private set; }
+        public static UniversityClassLib.University University { get; private set; }
 
 
         public static void LoadDataBase()
         {
             string query = @"SELECT U.Id AS UniversityId, 
-                                    U.Name AS UniversityName, 
+                                    U.Name AS UniversityName,
                                     U.RectorId
                              FROM [Universities] AS U
-                             WHERE U.Id = @universityId";
+                             WHERE U.Id = @universityId;";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 // University
@@ -42,21 +42,87 @@ namespace UniversityNamespace
                 {
                     while (reader.Read())
                     {
-                        University = new University(
+                        University = new UniversityClassLib.University(
                             Convert.ToInt32(reader["UniversityId"]),
                             Convert.ToString(reader["UniversityName"]),
-                            GetRectorById(Convert.ToInt32(reader["RectorId"]))
+                            LoadRector(Convert.ToInt32(reader["RectorId"]))
                         );
                     };
-                }                
+                }
+                // University's faculties
+                cmd.CommandText = @"SELECT F.Id, F.Name
+                                    FROM [Faculties] AS F
+                                    INNER JOIN [UniversitiesFaculties] AS UF
+                                    ON UF.UniversityId = @universityId AND 
+                                       UF.FacultyId = F.Id;";
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    int facultyId = Convert.ToInt32(reader["Id"]);
+                    University.Faculties.Add(new Faculty(facultyId)
+                    {
+                        Name = Convert.ToString(reader["Name"]),
+                        Lecturers = LoadLecturers(facultyId),
+                        Groups = 
+                    });
+                }
             }
         }
-        private static Rector GetRectorById(int rectorId)
+        
+        private static List<Group> LoadGroups(int facultyId)
         {
-            string query = @"SELECT U.Id, U.Name, U.Surname, U.BirthDate,
-		                            U.Email, U.Password, U.Username
-	                         FROM [Users] AS U
-                             WHERE U.Id = @rectorId";
+
+        }
+
+        private static List<Lecturer> LoadLecturers(int facultyId)
+        {
+            string query = @"SELECT L.Id, H.Name, H.Surname, H.BirthDate, 
+                                    U.Email, U.Username, U.Password,
+		                            L.ScientificDegree, L.AcademicStatus,
+                                    L.ScientificIdentifiers AS SI, L.StatusId
+	                         FROM [Lecturers] AS L
+	                         INNER JOIN [Users] AS U ON U.Id = L.UserId
+                             INNER JOIN [Humans] AS H ON H.Id = U.HumanId
+                             INNER JOIN [FacultiesLecturers] AS FL
+	                         ON FL.FacultyId = @facultyId AND FL.LecturerId = L.Id;";
+            List<Lecturer> lecturers = new List<Lecturer>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlParameter sqlParameter = new SqlParameter
+                {
+                    ParameterName = "@facultyId",
+                    Value = facultyId
+                };
+                cmd.Parameters.Add(sqlParameter);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    lecturers.Add(new Lecturer(Convert.ToInt32(reader["Id"]))
+                    {
+                        Name = Convert.ToString(reader["Name"]),
+                        Surname = Convert.ToString(reader["Surname"]),
+                        BirthDate = Convert.ToDateTime(reader["BirthDate"]),
+                        Status = (LecturerStatus)Convert.ToInt32(reader["StatusId"]),
+                        Username = Convert.ToString(reader["Username"]),
+                        Password = Convert.ToString(reader["Password"]),
+                        Email = Convert.ToString(reader["Email"]),
+                        ScientificDegree = Convert.ToString(reader["ScientificDegree"]),
+                        AcademicStatus = Convert.ToString(reader["AcademicStatus"]),
+                        ScientificIdentifiers = Convert.ToString(reader["SI"])
+                    });
+                }
+            }
+            return lecturers;
+        }
+
+        private static Rector LoadRector(int rectorId)
+        {
+            string query = @"SELECT R.Id, H.Name, H.Surname, H.BirthDate,
+	                                U.Email, U.Password, U.Username, R.StatusId
+	                         FROM [Rectors] AS R
+                             INNER JOIN [Users] AS U ON U.Id = R.UserId
+                             INNER JOIN [Humans] AS H ON H.Id = U.HumanId
+                             WHERE R.Id = @rectorId;";
             Rector rector;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -72,6 +138,7 @@ namespace UniversityNamespace
                     {
                         Name = Convert.ToString(reader["Name"]),
                         Surname = Convert.ToString(reader["Surname"]),
+                        Status = (RectorStatus)Convert.ToInt32(reader["StatusId"]),
                         BirthDate = Convert.ToDateTime(reader["BirthDate"]),
                         Email = Convert.ToString(reader["Email"]),
                         Password = Convert.ToString(reader["Password"]),

@@ -5,10 +5,10 @@ using System.Windows.Forms;
 using UniversityClassLib;
 using System.Data;
 using UniversityClassLib.Enums;
-using UniversityNamespace.Structs;
+using University.Structs;
 using System.Web.Security;
 
-namespace UniversityNamespace
+namespace University
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace UniversityNamespace
         private const int universityId = 1;
 
         private static void LoadDataBase()
-        {
+        {            
             string sqlExpression = "";
             List<Lecturer> lerturers = GetLecturers();
             using (SqlConnection connection = new SqlConnection(connectionString))

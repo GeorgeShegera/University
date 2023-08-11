@@ -33,6 +33,8 @@ namespace UniversityClassLib
             Rated = rated;
             AssignedStudentId = assignedStudentId;
         }
-        public Task(int id) : this(id, "", "", default, default, default, new Subject(), 0, 0, default) { }
+        public Task(int id) : this(id, "", "", default, default, default,
+                                   new Subject(), 0, 0, default)
+        { }
     }
 }

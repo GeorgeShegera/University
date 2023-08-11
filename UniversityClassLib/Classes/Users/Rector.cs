@@ -8,8 +8,15 @@ namespace UniversityClassLib
 {
     public class Rector : User
     {
-        public Rector(int id = default, string username = "", string password = "", string name = "",
-             string surname = "", DateTime date = default, string email = "")
-        : base(id, username, password, name, surname, date, email) { }
+        public RectorStatus Status { get; set; }
+
+        public Rector(int id = default, string username = "",
+                      string password = "", string name = "",
+                      string surname = "", DateTime date = default,
+                      string email = "", RectorStatus status = default)
+                : base(id, username, password, name, surname, date, email)
+        {
+            Status = status;
+        }
     }
 }

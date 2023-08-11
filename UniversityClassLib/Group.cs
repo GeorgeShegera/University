@@ -10,8 +10,9 @@ namespace UniversityClassLib
     {
         public string Name { get; set; }
         public int Year { get; set; }
+        public GroupStatus Status { get; set; }
         public List<Student> Students { get; set; }
         public List<Class> Classes { get; set; }
-        public List<Task> Tasks { get; set; } = new List<Task>();
+        public Group() { }
     }
 }

@@ -10,7 +10,7 @@ namespace UniversityClassLib
     {
         public int Id { get; }
         public string Name { get; set; }
-        public Rector Rector { get; }
+        public Rector Rector { get; private set; }
         public List<Faculty> Faculties { get; set; }
 
         public University(int id = default, string name = "", Rector rector = default, List<Faculty> faculties = default)

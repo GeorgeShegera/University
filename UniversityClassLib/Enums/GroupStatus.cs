@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace UniversityClassLib
 {
-    public enum ClassType
+    public enum GroupStatus
     {
-        Lecture = 1,
-        Seminar,
-        Laboratory,
-        Workshop,
-        Tutorial,
-        OnlineClass
+        Former = 1,
+        Active
     }
 }
