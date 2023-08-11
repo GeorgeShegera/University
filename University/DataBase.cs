@@ -62,13 +62,50 @@ namespace University
                     {
                         Name = Convert.ToString(reader["Name"]),
                         Lecturers = LoadLecturers(facultyId),
-                        Groups = 
+                        Groups = LoadGroups(facultyId)
                     });
                 }
             }
         }
-        
+
         private static List<Group> LoadGroups(int facultyId)
+        {
+            string query = @"SELECT G.Id, G.Name, G.Year, G.StatusId
+                             FROM [Groups] AS G
+                             WHERE G.FacultyId = @facultyId";
+            List<Group> groups = new List<Group>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlParameter sqlParameter = new SqlParameter
+                {
+                    ParameterName = "@facultyId",
+                    Value = facultyId
+                };
+                cmd.Parameters.Add(sqlParameter);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    int groupId = Convert.ToInt32(reader["Id"]);
+                    groups.Add(new Group(groupId)
+                    {
+                        Name = Convert.ToString(reader["Name"]),
+                        Year = Convert.ToInt32(reader["Year"]),
+                        Status = (GroupStatus)Convert.ToInt32(reader["StatusId"]),
+                        Students = LoadStudents(groupId),
+                        Classes = LoadClasses(groupId)
+                    });
+                }
+            }
+            return groups;
+        }
+
+        private static List<Student> LoadStudents(int groupId)
+        {
+
+        }
+
+        private static List<Class> LoadClasses(int groupId)
         {
 
         }
