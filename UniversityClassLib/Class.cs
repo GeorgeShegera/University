@@ -11,24 +11,26 @@ namespace UniversityClassLib
     {
         public int Id { get; }
         public Subject Subject { get; set; }
-        public DayOfWeek DayOfWeek { get; set; }
-        public WeekType WeekType { get; set; }
+        public Lecturer Lecturer { get; set; }
+        public DayOfWeek WeekDay { get; set; }
+        public TypeOfWeek WeekType { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
         public ClassType Type { get; set; }
-        public Lecturer Lecturer { get; set; }
-        public Class(int id, Subject subject, DayOfWeek dayOfWeek, WeekType weekType,
-                       TimeSpan startTime, TimeSpan endTime, ClassType type, Lecturer lecturer)
+
+        public Class(int id = default, Subject subject = default,
+                     DayOfWeek dayOfWeek = default, TypeOfWeek weekType = default,
+                     TimeSpan startTime = default, TimeSpan endTime = default,
+                     ClassType type = default, Lecturer lecturer = null)
         {
             Id = id;
             Subject = subject;
-            DayOfWeek = dayOfWeek;
+            WeekDay = dayOfWeek;
             WeekType = weekType;
             StartTime = startTime;
             EndTime = endTime;
             Type = type;
             Lecturer = lecturer;
         }
-        public Class(int id) : this(id, new Subject(), default, default, default, default, default, new Lecturer()) { }
     }
 }

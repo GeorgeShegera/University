@@ -47,7 +47,7 @@
     <Compile Include="Classes\Users\Human.cs" />
     <Compile Include="Enums\ClassType.cs" />
     <Compile Include="Enums\TaskState.cs" />
-    <Compile Include="Enums\WeekType.cs" />
+    <Compile Include="Enums\TypeOfWeek.cs" />
     <Compile Include="Faculty.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Enums\LecturerStatus.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="Classes\Subject.cs" />
     <Compile Include="Enums\StudentStatus.cs" />
     <Compile Include="Enums\RectorStatus.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="StudentTask.cs" />
     <Compile Include="University.cs" />
   </ItemGroup>
   <ItemGroup />

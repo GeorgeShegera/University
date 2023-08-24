@@ -16,6 +16,7 @@ namespace UniversityClassLib
         public DateTime DeadLine { get; set; }
         public DateTime PublicationDate { get; set; }
         public Subject Subject { get; set; }
+        public Lecturer Lecturer { get; set; }
         public int Points { get; set; }
         public int Rated { get; set; }
         public int AssignedStudentId { get; set; }

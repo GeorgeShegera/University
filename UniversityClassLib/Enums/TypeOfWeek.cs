@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversityClassLib.Enums
 {
-    public enum WeekType
+    public enum TypeOfWeek
     {
         Even = 1,
         Odd,

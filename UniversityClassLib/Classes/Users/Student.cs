@@ -9,14 +9,14 @@ namespace UniversityClassLib
     public class Student : User
     {
         public List<Mark> Marks { get; set; } = new List<Mark>();
-        public List<Task> Tasks { get; set; }
+        public List<StudentTask> Tasks { get; set; }
         public StudentStatus Status { get; set; }
 
         public Student(int id = default, List<Mark> marks = default,
                        string username = default, string password = default,
                        string name = default, string surname = default,
                        DateTime date = default, string email = default,
-                       List<Task> tasks = default, StudentStatus status = default)
+                       List<StudentTask> tasks = default, StudentStatus status = default)
             : base(id, username, password, name, surname, date, email)
         {
             Marks = marks;
@@ -24,7 +24,7 @@ namespace UniversityClassLib
             Status = status;
         }
         public Student(User user, List<Mark> marks = default,
-                       List<Task> task = default, StudentStatus status = default)
+                       List<StudentTask> task = default, StudentStatus status = default)
             : base(user)
         {
             Marks = marks;

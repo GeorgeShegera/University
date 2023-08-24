@@ -10,15 +10,11 @@ namespace UniversityClassLib
     {
         public int Id { get; }
         public string Name { get; set; }
-        public float PassMark { get; set; }
-        public Lecturer Lecturer { get; set; }
 
-        public Subject(int id = default, string name = "", float passMark = 60, Lecturer lecturer = default)
+        public Subject(int id = default, string name = "")
         {
             Id = id;
-            Name = name;
-            PassMark = passMark;
-            Lecturer = lecturer;
+            Name = name;            
         }
     }
 }
