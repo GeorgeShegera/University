@@ -4,3 +4,13 @@ E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\UniversityClassLib.pdb
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.dll
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\Portable.System.DateTimeOnly.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Buffers.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Memory.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Numerics.Vectors.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Buffers.xml
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Memory.xml
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Numerics.Vectors.xml
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.csproj.CopyComplete

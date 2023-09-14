@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace University
+namespace UniversityProject
 {
     public partial class LoginForm : Form
     {
@@ -116,6 +116,11 @@ namespace University
         {
             panel_Register1.Visible = false;
             panel_Register2.Visible = true;
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
