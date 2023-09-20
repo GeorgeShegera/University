@@ -83,7 +83,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStorage.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-arrow-right-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erro.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erro.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

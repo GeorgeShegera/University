@@ -13,7 +13,7 @@ namespace UniversityClassLib
 
         public Rector(int id = default, string username = "",
                       string password = "", string name = "",
-                      string surname = "", DateOnly date = default, string email = "", 
+                      string surname = "", DateOnly date = default, string email = "",
                       RectorStatus status = default, DateOnly tenureStart = default)
                 : base(id, username, password, name, surname, date, email)
         {
@@ -21,11 +21,12 @@ namespace UniversityClassLib
             TenureStart = tenureStart;
         }
 
-        public Rector(Rector rector)
-                : base(rector)
+        public Rector(User user, RectorStatus status = default, 
+                      DateOnly tenureStart = default)
+                : base(user)
         {
-            Status = rector.Status;
-            TenureStart = rector.TenureStart;
+            Status = status;
+            TenureStart = tenureStart;
         }
     }
 }

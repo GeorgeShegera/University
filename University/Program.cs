@@ -11,8 +11,8 @@ namespace UniversityProject
 {
     internal static class Program
     {
-        private const int universityId = 1;
-        private const string connectionString = @"Server=GEORGE;
+        internal const int universityId = 1;
+        internal const string connStr = @"Server=GEORGE;
                                                   Database=University;
                                                   Trusted_Connection=True;";
         /// <summary>

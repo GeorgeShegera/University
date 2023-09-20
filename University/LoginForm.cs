@@ -4,12 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
+using UniversityClassLib;
 
 namespace UniversityProject
 {
@@ -23,10 +27,10 @@ namespace UniversityProject
         }
 
         private void CheckLoginPanel()
-            => btnLogin.Enabled = tbUsernameLogin.Text.Length > 0 &&
+            => btnLogin.Enabled = tbUsernameEmailLogin.Text.Length > 0 &&
                                   tbPasswordLogin.Text.Length > 6 &&
-                                  tbUsernameLogin.Text.Length <= 32 &&
-                                  tbUsernameLogin.Text.Length <= 32;
+                                  tbUsernameEmailLogin.Text.Length <= 32 &&
+                                  tbUsernameEmailLogin.Text.Length <= 32;
 
         private void Panel_CheckFirstRegister()
         {
@@ -120,7 +124,87 @@ namespace UniversityProject
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            lbVerifyErr.Visible = false;
+            User user;
+            string query;
+            string userType;
+            using (SqlConnection conn = new SqlConnection(Program.connStr))
+            {
+                conn.Open();
+                query = "EXEC [AuthGetUser] '@login', '@password';";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddRange(new SqlParameter[]
+                {
+                    new SqlParameter("@password", tbPasswordLogin.Text),
+                    new SqlParameter("@login", tbUsernameEmailLogin.Text)
+                });
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        userType = Convert.ToString(reader["Type"]);
+                        DateTime birthD = Convert.ToDateTime(reader["BirthDate"]);
+                        user = new User(Convert.ToInt32(reader["Id"]))
+                        {
+                            Name = Convert.ToString(reader["Name"]),
+                            Surname = Convert.ToString(reader["Surname"]),
+                            BirthDate = new DateOnly(birthD.Year, birthD.Month, birthD.Day),
+                            Username = Convert.ToString(reader["Username"]),
+                            Password = Convert.ToString(reader["Password"]),
+                            Email = Convert.ToString(reader["Email"]),
+                        };
+                    }
+                    else
+                    {
+                        tbPasswordLogin.Clear();
+                        SoundPlayer player = new SoundPlayer(Properties.Resources.erro);
+                        player.Play();
+                        lbVerifyErr.Visible = true;
+                        return;
+                    }
+                }
+            }
+            Form userForm = new Form();
+            switch (userType)
+            {
+                case "Student":
+                    {
 
+                    }
+                    break;
+                case "Lecturer":
+                    {
+
+                    }
+                    break;
+                case "Rector":
+                    {
+                        Rector rector;
+                        using (SqlConnection conn = new SqlConnection(Program.connStr))
+                        {
+                            conn.Open();
+                            DateTime tenSt;
+                            query = "EXEC RectorById @userId";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            SqlParameter userId = new SqlParameter("@userId", user.Id);
+                            cmd.Parameters.Add(userId);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    tenSt = Convert.ToDateTime(reader["TenureStart"]);
+                                    rector = new Rector(user)
+                                    {
+                                        Status = (RectorStatus)Convert.ToInt32(reader["StatusId"]),
+                                        TenureStart = new DateOnly(tenSt.Year, tenSt.Month, tenSt.Day)
+                                    };
+                                }
+                            }
+                        }
+                    }
+                    break;
+
+            }
         }
     }
 }
