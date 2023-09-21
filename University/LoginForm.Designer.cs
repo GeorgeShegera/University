@@ -33,9 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel_Register2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbGoBack_Panel2 = new System.Windows.Forms.Label();
-            this.tbGroupName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.lb_Register = new System.Windows.Forms.Label();
             this.btnCreateAccount = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -49,28 +46,31 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.dragPbUniversity = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.pbUniversity = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel_Login = new Guna.UI2.WinForms.Guna2Panel();
-            this.tbUsernameEmailLogin = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbPasswordLogin = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCreateAccLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.lbVerifyErr = new System.Windows.Forms.Label();
             this.tbSurname = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel_Register1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbGoBack_Panel1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpBirthDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnContinue = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dragPanelLogin = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.dragPanelReg1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.lbVerifyErr = new System.Windows.Forms.Label();
+            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnContinue = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.tbGroupName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbUsernameEmailLogin = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPasswordLogin = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCreateAccLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.pbUniversity = new Guna.UI2.WinForms.Guna2PictureBox();
             dragPanelReg2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel_Register2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUniversity)).BeginInit();
             this.panel_Login.SuspendLayout();
             this.panel_Register1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUniversity)).BeginInit();
             this.SuspendLayout();
             // 
             // dragPanelReg2
@@ -107,81 +107,6 @@
             this.lbGoBack_Panel2.Click += new System.EventHandler(this.Lb_GoBack_Panel2_Click);
             this.lbGoBack_Panel2.MouseEnter += new System.EventHandler(this.Btn_GoBack_MouseEnter);
             this.lbGoBack_Panel2.MouseLeave += new System.EventHandler(this.Btn_GoBack_MouseLeave);
-            // 
-            // tbGroupName
-            // 
-            this.tbGroupName.Animated = true;
-            this.tbGroupName.BorderRadius = 8;
-            this.tbGroupName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbGroupName.DefaultText = "";
-            this.tbGroupName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbGroupName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbGroupName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGroupName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGroupName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
-            this.tbGroupName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGroupName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbGroupName.ForeColor = System.Drawing.Color.Black;
-            this.tbGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGroupName.IconLeft = global::UniversityProject.Properties.Resources.icon_name_tag;
-            this.tbGroupName.Location = new System.Drawing.Point(3, 171);
-            this.tbGroupName.Name = "tbGroupName";
-            this.tbGroupName.PasswordChar = '\0';
-            this.tbGroupName.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbGroupName.PlaceholderText = "Group Name";
-            this.tbGroupName.SelectedText = "";
-            this.tbGroupName.Size = new System.Drawing.Size(218, 39);
-            this.tbGroupName.TabIndex = 1;
-            // 
-            // tbPassword
-            // 
-            this.tbPassword.Animated = true;
-            this.tbPassword.BorderRadius = 8;
-            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPassword.DefaultText = "";
-            this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
-            this.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPassword.IconLeft = global::UniversityProject.Properties.Resources.icon_password;
-            this.tbPassword.Location = new System.Drawing.Point(3, 115);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '●';
-            this.tbPassword.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbPassword.PlaceholderText = "Password";
-            this.tbPassword.SelectedText = "";
-            this.tbPassword.Size = new System.Drawing.Size(218, 39);
-            this.tbPassword.TabIndex = 1;
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Animated = true;
-            this.tbUsername.BorderRadius = 8;
-            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUsername.DefaultText = "";
-            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
-            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbUsername.ForeColor = System.Drawing.Color.Black;
-            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.IconLeft = global::UniversityProject.Properties.Resources.icon_user;
-            this.tbUsername.Location = new System.Drawing.Point(3, 70);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.PasswordChar = '\0';
-            this.tbUsername.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbUsername.PlaceholderText = "Username";
-            this.tbUsername.SelectedText = "";
-            this.tbUsername.Size = new System.Drawing.Size(218, 39);
-            this.tbUsername.TabIndex = 1;
             // 
             // lb_Register
             // 
@@ -323,17 +248,6 @@
             this.dragPbUniversity.TargetControl = this.pbUniversity;
             this.dragPbUniversity.TransparentWhileDrag = false;
             // 
-            // pbUniversity
-            // 
-            this.pbUniversity.Image = global::UniversityProject.Properties.Resources.UniversityImg;
-            this.pbUniversity.ImageRotate = 0F;
-            this.pbUniversity.Location = new System.Drawing.Point(0, -1);
-            this.pbUniversity.Name = "pbUniversity";
-            this.pbUniversity.Size = new System.Drawing.Size(538, 405);
-            this.pbUniversity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUniversity.TabIndex = 0;
-            this.pbUniversity.TabStop = false;
-            // 
             // panel_Login
             // 
             this.panel_Login.Controls.Add(this.lbVerifyErr);
@@ -349,82 +263,16 @@
             this.panel_Login.Size = new System.Drawing.Size(224, 350);
             this.panel_Login.TabIndex = 8;
             // 
-            // tbUsernameEmailLogin
+            // lbVerifyErr
             // 
-            this.tbUsernameEmailLogin.Animated = true;
-            this.tbUsernameEmailLogin.BorderRadius = 8;
-            this.tbUsernameEmailLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUsernameEmailLogin.DefaultText = "";
-            this.tbUsernameEmailLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbUsernameEmailLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbUsernameEmailLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsernameEmailLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbUsernameEmailLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
-            this.tbUsernameEmailLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsernameEmailLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbUsernameEmailLogin.ForeColor = System.Drawing.Color.Black;
-            this.tbUsernameEmailLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsernameEmailLogin.IconLeft = global::UniversityProject.Properties.Resources.icon_user;
-            this.tbUsernameEmailLogin.Location = new System.Drawing.Point(3, 55);
-            this.tbUsernameEmailLogin.Name = "tbUsernameEmailLogin";
-            this.tbUsernameEmailLogin.PasswordChar = '\0';
-            this.tbUsernameEmailLogin.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbUsernameEmailLogin.PlaceholderText = "Username or email";
-            this.tbUsernameEmailLogin.SelectedText = "";
-            this.tbUsernameEmailLogin.Size = new System.Drawing.Size(218, 39);
-            this.tbUsernameEmailLogin.TabIndex = 1;
-            this.tbUsernameEmailLogin.TextChanged += new System.EventHandler(this.LoginPanel_TextChanged);
-            // 
-            // tbPasswordLogin
-            // 
-            this.tbPasswordLogin.Animated = true;
-            this.tbPasswordLogin.BorderRadius = 8;
-            this.tbPasswordLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPasswordLogin.DefaultText = "";
-            this.tbPasswordLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPasswordLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPasswordLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPasswordLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPasswordLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
-            this.tbPasswordLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPasswordLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tbPasswordLogin.ForeColor = System.Drawing.Color.Black;
-            this.tbPasswordLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPasswordLogin.IconLeft = global::UniversityProject.Properties.Resources.icon_password;
-            this.tbPasswordLogin.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.tbPasswordLogin.Location = new System.Drawing.Point(3, 115);
-            this.tbPasswordLogin.Name = "tbPasswordLogin";
-            this.tbPasswordLogin.PasswordChar = '●';
-            this.tbPasswordLogin.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.tbPasswordLogin.PlaceholderText = "Password";
-            this.tbPasswordLogin.SelectedText = "";
-            this.tbPasswordLogin.Size = new System.Drawing.Size(218, 39);
-            this.tbPasswordLogin.TabIndex = 1;
-            this.tbPasswordLogin.Tag = "password";
-            this.tbPasswordLogin.UseSystemPasswordChar = true;
-            this.tbPasswordLogin.IconRightClick += new System.EventHandler(this.Tb_Password_IconRightClick);
-            this.tbPasswordLogin.TextChanged += new System.EventHandler(this.LoginPanel_TextChanged);
-            // 
-            // btnCreateAccLogin
-            // 
-            this.btnCreateAccLogin.Animated = true;
-            this.btnCreateAccLogin.AutoRoundedCorners = true;
-            this.btnCreateAccLogin.BorderRadius = 21;
-            this.btnCreateAccLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateAccLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateAccLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCreateAccLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCreateAccLogin.FillColor = System.Drawing.Color.Transparent;
-            this.btnCreateAccLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCreateAccLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCreateAccLogin.Image = global::UniversityProject.Properties.Resources.icon_arrow_right;
-            this.btnCreateAccLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnCreateAccLogin.Location = new System.Drawing.Point(3, 288);
-            this.btnCreateAccLogin.Name = "btnCreateAccLogin";
-            this.btnCreateAccLogin.Size = new System.Drawing.Size(218, 45);
-            this.btnCreateAccLogin.TabIndex = 6;
-            this.btnCreateAccLogin.Text = "Create Account";
-            this.btnCreateAccLogin.Click += new System.EventHandler(this.Btn_CreateAcc_Login_Click);
+            this.lbVerifyErr.ForeColor = System.Drawing.Color.Olive;
+            this.lbVerifyErr.Location = new System.Drawing.Point(3, 262);
+            this.lbVerifyErr.Name = "lbVerifyErr";
+            this.lbVerifyErr.Size = new System.Drawing.Size(215, 27);
+            this.lbVerifyErr.TabIndex = 7;
+            this.lbVerifyErr.Text = "We couldn\'t verify your account with that information.";
+            this.lbVerifyErr.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbVerifyErr.Visible = false;
             // 
             // tbSurname
             // 
@@ -542,6 +390,30 @@
             this.dtpBirthDate.ValueChanged += new System.EventHandler(this.Panel_FirstRegister_TextChanged);
             this.dtpBirthDate.Click += new System.EventHandler(this.Dtp_BirthDate_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(63, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 31);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Register";
+            // 
+            // dragPanelLogin
+            // 
+            this.dragPanelLogin.DockIndicatorTransparencyValue = 0.6D;
+            this.dragPanelLogin.DragStartTransparencyValue = 1D;
+            this.dragPanelLogin.TargetControl = this.panel_Login;
+            this.dragPanelLogin.UseTransparentDrag = true;
+            // 
+            // dragPanelReg1
+            // 
+            this.dragPanelReg1.DockIndicatorTransparencyValue = 0.6D;
+            this.dragPanelReg1.DragStartTransparencyValue = 1D;
+            this.dragPanelReg1.TargetControl = this.panel_Register1;
+            this.dragPanelReg1.UseTransparentDrag = true;
+            // 
             // tbEmail
             // 
             this.tbEmail.Animated = true;
@@ -567,16 +439,6 @@
             this.tbEmail.Size = new System.Drawing.Size(218, 39);
             this.tbEmail.TabIndex = 1;
             this.tbEmail.TextChanged += new System.EventHandler(this.Panel_FirstRegister_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 31);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Register";
             // 
             // btnContinue
             // 
@@ -604,30 +466,168 @@
             this.btnContinue.Text = "Continue";
             this.btnContinue.Click += new System.EventHandler(this.Btn_Continue_Click);
             // 
-            // dragPanelLogin
+            // tbGroupName
             // 
-            this.dragPanelLogin.DockIndicatorTransparencyValue = 0.6D;
-            this.dragPanelLogin.DragStartTransparencyValue = 1D;
-            this.dragPanelLogin.TargetControl = this.panel_Login;
-            this.dragPanelLogin.UseTransparentDrag = true;
+            this.tbGroupName.Animated = true;
+            this.tbGroupName.BorderRadius = 8;
+            this.tbGroupName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbGroupName.DefaultText = "";
+            this.tbGroupName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbGroupName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbGroupName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGroupName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbGroupName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
+            this.tbGroupName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGroupName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbGroupName.ForeColor = System.Drawing.Color.Black;
+            this.tbGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbGroupName.IconLeft = global::UniversityProject.Properties.Resources.icon_name_tag;
+            this.tbGroupName.Location = new System.Drawing.Point(3, 171);
+            this.tbGroupName.Name = "tbGroupName";
+            this.tbGroupName.PasswordChar = '\0';
+            this.tbGroupName.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbGroupName.PlaceholderText = "Group Name";
+            this.tbGroupName.SelectedText = "";
+            this.tbGroupName.Size = new System.Drawing.Size(218, 39);
+            this.tbGroupName.TabIndex = 1;
             // 
-            // dragPanelReg1
+            // tbPassword
             // 
-            this.dragPanelReg1.DockIndicatorTransparencyValue = 0.6D;
-            this.dragPanelReg1.DragStartTransparencyValue = 1D;
-            this.dragPanelReg1.TargetControl = this.panel_Register1;
-            this.dragPanelReg1.UseTransparentDrag = true;
+            this.tbPassword.Animated = true;
+            this.tbPassword.BorderRadius = 8;
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.DefaultText = "";
+            this.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassword.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
+            this.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassword.IconLeft = global::UniversityProject.Properties.Resources.icon_password;
+            this.tbPassword.Location = new System.Drawing.Point(3, 115);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '●';
+            this.tbPassword.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbPassword.PlaceholderText = "Password";
+            this.tbPassword.SelectedText = "";
+            this.tbPassword.Size = new System.Drawing.Size(218, 39);
+            this.tbPassword.TabIndex = 1;
             // 
-            // lbVerifyErr
+            // tbUsername
             // 
-            this.lbVerifyErr.ForeColor = System.Drawing.Color.Olive;
-            this.lbVerifyErr.Location = new System.Drawing.Point(3, 262);
-            this.lbVerifyErr.Name = "lbVerifyErr";
-            this.lbVerifyErr.Size = new System.Drawing.Size(215, 27);
-            this.lbVerifyErr.TabIndex = 7;
-            this.lbVerifyErr.Text = "We couldn\'t verify your account with that information.";
-            this.lbVerifyErr.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbVerifyErr.Visible = false;
+            this.tbUsername.Animated = true;
+            this.tbUsername.BorderRadius = 8;
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.DefaultText = "";
+            this.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
+            this.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbUsername.ForeColor = System.Drawing.Color.Black;
+            this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsername.IconLeft = global::UniversityProject.Properties.Resources.icon_user;
+            this.tbUsername.Location = new System.Drawing.Point(3, 70);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.PasswordChar = '\0';
+            this.tbUsername.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbUsername.PlaceholderText = "Username";
+            this.tbUsername.SelectedText = "";
+            this.tbUsername.Size = new System.Drawing.Size(218, 39);
+            this.tbUsername.TabIndex = 1;
+            // 
+            // tbUsernameEmailLogin
+            // 
+            this.tbUsernameEmailLogin.Animated = true;
+            this.tbUsernameEmailLogin.BorderRadius = 8;
+            this.tbUsernameEmailLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsernameEmailLogin.DefaultText = "";
+            this.tbUsernameEmailLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbUsernameEmailLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbUsernameEmailLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsernameEmailLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbUsernameEmailLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
+            this.tbUsernameEmailLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsernameEmailLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbUsernameEmailLogin.ForeColor = System.Drawing.Color.Black;
+            this.tbUsernameEmailLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbUsernameEmailLogin.IconLeft = global::UniversityProject.Properties.Resources.icon_user;
+            this.tbUsernameEmailLogin.Location = new System.Drawing.Point(3, 55);
+            this.tbUsernameEmailLogin.Name = "tbUsernameEmailLogin";
+            this.tbUsernameEmailLogin.PasswordChar = '\0';
+            this.tbUsernameEmailLogin.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbUsernameEmailLogin.PlaceholderText = "Username or email";
+            this.tbUsernameEmailLogin.SelectedText = "";
+            this.tbUsernameEmailLogin.Size = new System.Drawing.Size(218, 39);
+            this.tbUsernameEmailLogin.TabIndex = 1;
+            this.tbUsernameEmailLogin.TextChanged += new System.EventHandler(this.LoginPanel_TextChanged);
+            // 
+            // tbPasswordLogin
+            // 
+            this.tbPasswordLogin.Animated = true;
+            this.tbPasswordLogin.BorderRadius = 8;
+            this.tbPasswordLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPasswordLogin.DefaultText = "";
+            this.tbPasswordLogin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPasswordLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPasswordLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPasswordLogin.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPasswordLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(227)))));
+            this.tbPasswordLogin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPasswordLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbPasswordLogin.ForeColor = System.Drawing.Color.Black;
+            this.tbPasswordLogin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPasswordLogin.IconLeft = global::UniversityProject.Properties.Resources.icon_password;
+            this.tbPasswordLogin.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.tbPasswordLogin.Location = new System.Drawing.Point(3, 115);
+            this.tbPasswordLogin.Name = "tbPasswordLogin";
+            this.tbPasswordLogin.PasswordChar = '●';
+            this.tbPasswordLogin.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.tbPasswordLogin.PlaceholderText = "Password";
+            this.tbPasswordLogin.SelectedText = "";
+            this.tbPasswordLogin.Size = new System.Drawing.Size(218, 39);
+            this.tbPasswordLogin.TabIndex = 1;
+            this.tbPasswordLogin.Tag = "password";
+            this.tbPasswordLogin.UseSystemPasswordChar = true;
+            this.tbPasswordLogin.IconRightClick += new System.EventHandler(this.Tb_Password_IconRightClick);
+            this.tbPasswordLogin.TextChanged += new System.EventHandler(this.LoginPanel_TextChanged);
+            // 
+            // btnCreateAccLogin
+            // 
+            this.btnCreateAccLogin.Animated = true;
+            this.btnCreateAccLogin.AutoRoundedCorners = true;
+            this.btnCreateAccLogin.BorderRadius = 21;
+            this.btnCreateAccLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateAccLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateAccLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateAccLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateAccLogin.FillColor = System.Drawing.Color.Transparent;
+            this.btnCreateAccLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateAccLogin.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCreateAccLogin.Image = global::UniversityProject.Properties.Resources.icon_arrow_right;
+            this.btnCreateAccLogin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnCreateAccLogin.Location = new System.Drawing.Point(3, 288);
+            this.btnCreateAccLogin.Name = "btnCreateAccLogin";
+            this.btnCreateAccLogin.Size = new System.Drawing.Size(218, 45);
+            this.btnCreateAccLogin.TabIndex = 6;
+            this.btnCreateAccLogin.Text = "Create Account";
+            this.btnCreateAccLogin.Click += new System.EventHandler(this.Btn_CreateAcc_Login_Click);
+            // 
+            // pbUniversity
+            // 
+            this.pbUniversity.Image = global::UniversityProject.Properties.Resources.UniversityImg;
+            this.pbUniversity.ImageRotate = 0F;
+            this.pbUniversity.Location = new System.Drawing.Point(0, -1);
+            this.pbUniversity.Name = "pbUniversity";
+            this.pbUniversity.Size = new System.Drawing.Size(538, 405);
+            this.pbUniversity.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUniversity.TabIndex = 0;
+            this.pbUniversity.TabStop = false;
             // 
             // LoginForm
             // 
@@ -648,11 +648,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel_Register2.ResumeLayout(false);
             this.panel_Register2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUniversity)).EndInit();
             this.panel_Login.ResumeLayout(false);
             this.panel_Login.PerformLayout();
             this.panel_Register1.ResumeLayout(false);
             this.panel_Register1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUniversity)).EndInit();
             this.ResumeLayout(false);
 
         }

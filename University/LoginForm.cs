@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using UniversityClassLib;
+using UniversityProject.UserForms;
 
 namespace UniversityProject
 {
@@ -201,10 +202,13 @@ namespace UniversityProject
                                 }
                             }
                         }
+                        userForm = new RectorForm();
                     }
                     break;
-
             }
+            Hide();
+            userForm.ShowDialog();
+            Show();
         }
     }
 }

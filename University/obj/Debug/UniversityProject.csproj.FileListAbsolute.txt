@@ -21,3 +21,6 @@ E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debu
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.csproj.CopyComplete
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.exe
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.pdb
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.UserForms.RectorForm.resources
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\Newtonsoft.Json.dll
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\Newtonsoft.Json.xml
