@@ -17,11 +17,22 @@ namespace UniversityProject
     internal static class Program
     {
         internal const int universityId = 1;
-        internal static readonly string connStr = "";
+        internal static readonly string connStr;
+        internal static readonly string encryptKey;
 
         static Program()
         {
-            string json = "";
+            string json;
+            using (FileStream stream = new FileStream("encryptKey.json", FileMode.OpenOrCreate))
+            {
+                using (StreamReader read = new StreamReader(stream, Encoding.UTF8))
+                {
+                    json = read.ReadLine();
+                }
+            }
+            encryptKey = JsonConvert.DeserializeObject<string>(json);
+
+            json = "";
             using (FileStream stream = new FileStream("connStr.json", FileMode.OpenOrCreate))
             {
                 using (StreamReader read = new StreamReader(stream, Encoding.UTF8))

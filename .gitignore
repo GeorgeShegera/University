@@ -1,2 +1,4 @@
 # ignoring connection string
 University/bin/Debug/connStr.json
+# ignoring encrypting key
+University/bin/Debug/encryptKey.json
