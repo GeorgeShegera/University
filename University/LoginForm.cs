@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
 using UniversityClassLib;
+using UniversityProject.Classes;
 using UniversityProject.UserForms;
 
 namespace UniversityProject
@@ -129,15 +130,21 @@ namespace UniversityProject
             User user;
             string query;
             string userType;
+            string password = PasswordEncryptor.Encrypt(tbPasswordLogin.Text);
             using (SqlConnection conn = new SqlConnection(Program.connStr))
             {
                 conn.Open();
-                query = "EXEC [AuthGetUser] '@login', '@password';";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                query = "AuthGetUser";
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure
+                };
                 cmd.Parameters.AddRange(new SqlParameter[]
                 {
-                    new SqlParameter("@password", tbPasswordLogin.Text),
-                    new SqlParameter("@login", tbUsernameEmailLogin.Text)
+                    new SqlParameter("@usernameEmail", tbUsernameEmailLogin.Text),
+                    new SqlParameter("@password", password)
                 });
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -151,7 +158,7 @@ namespace UniversityProject
                             Surname = Convert.ToString(reader["Surname"]),
                             BirthDate = new DateOnly(birthD.Year, birthD.Month, birthD.Day),
                             Username = Convert.ToString(reader["Username"]),
-                            Password = Convert.ToString(reader["Password"]),
+                            Password = password,
                             Email = Convert.ToString(reader["Email"]),
                         };
                     }
