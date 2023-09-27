@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UniversityClassLib;
 
 namespace UniversityProject.UserForms
 {
     public partial class RectorForm : Form
     {
-        public RectorForm()
+        private Rector Rector { get; set; }
+        public RectorForm(Rector rector)
         {
+            Rector = rector;
             InitializeComponent();
         }
     }

@@ -127,50 +127,16 @@ namespace UniversityProject
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             lbVerifyErr.Visible = false;
-            User user;
-            string query;
-            string userType;
             string password = PasswordEncryptor.Encrypt(tbPasswordLogin.Text);
-            using (SqlConnection conn = new SqlConnection(Program.connStr))
+            string login = tbUsernameEmailLogin.Text;
+            (User user, string userType) = DataManager.AuthGetUser(password, login);
+            if (user is null)
             {
-                conn.Open();
-                query = "AuthGetUser";
-                SqlCommand cmd = new SqlCommand
-                {
-                    CommandText = query,
-                    Connection = conn,
-                    CommandType = CommandType.StoredProcedure
-                };
-                cmd.Parameters.AddRange(new SqlParameter[]
-                {
-                    new SqlParameter("@usernameEmail", tbUsernameEmailLogin.Text),
-                    new SqlParameter("@password", password)
-                });
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        userType = Convert.ToString(reader["Type"]);
-                        DateTime birthD = Convert.ToDateTime(reader["BirthDate"]);
-                        user = new User(Convert.ToInt32(reader["Id"]))
-                        {
-                            Name = Convert.ToString(reader["Name"]),
-                            Surname = Convert.ToString(reader["Surname"]),
-                            BirthDate = new DateOnly(birthD.Year, birthD.Month, birthD.Day),
-                            Username = Convert.ToString(reader["Username"]),
-                            Password = password,
-                            Email = Convert.ToString(reader["Email"]),
-                        };
-                    }
-                    else
-                    {
-                        tbPasswordLogin.Clear();
-                        SoundPlayer player = new SoundPlayer(Properties.Resources.erro);
-                        player.Play();
-                        lbVerifyErr.Visible = true;
-                        return;
-                    }
-                }
+                tbPasswordLogin.Clear();
+                SoundPlayer player = new SoundPlayer(Properties.Resources.erro);
+                player.Play();
+                lbVerifyErr.Visible = true;
+                return;
             }
             Form userForm = new Form();
             switch (userType)
@@ -187,29 +153,8 @@ namespace UniversityProject
                     break;
                 case "Rector":
                     {
-                        Rector rector;
-                        using (SqlConnection conn = new SqlConnection(Program.connStr))
-                        {
-                            conn.Open();
-                            DateTime tenSt;
-                            query = "EXEC RectorById @userId";
-                            SqlCommand cmd = new SqlCommand(query, conn);
-                            SqlParameter userId = new SqlParameter("@userId", user.Id);
-                            cmd.Parameters.Add(userId);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    tenSt = Convert.ToDateTime(reader["TenureStart"]);
-                                    rector = new Rector(user)
-                                    {
-                                        Status = (RectorStatus)Convert.ToInt32(reader["StatusId"]),
-                                        TenureStart = new DateOnly(tenSt.Year, tenSt.Month, tenSt.Day)
-                                    };
-                                }
-                            }
-                        }
-                        userForm = new RectorForm();
+                        Rector rector = DataManager.GetRector(user);
+                        userForm = new RectorForm(rector);
                     }
                     break;
             }

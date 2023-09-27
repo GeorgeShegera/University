@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Classes\PasswordEncryptor.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
