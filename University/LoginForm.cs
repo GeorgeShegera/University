@@ -126,6 +126,7 @@ namespace UniversityProject
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            if (!btnLogin.Enabled) return;
             lbVerifyErr.Visible = false;
             string password = PasswordEncryptor.Encrypt(tbPasswordLogin.Text);
             string login = tbUsernameEmailLogin.Text;
@@ -159,6 +160,7 @@ namespace UniversityProject
                     break;
             }
             Hide();
+            tbPasswordLogin.Text = "";
             userForm.ShowDialog();
             Show();
         }

@@ -127,11 +127,41 @@
   <data name="icon_arrow_right_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-arrow-right-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_course" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_course.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_course_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_course_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_email" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_faculty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_faculty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_faculty_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_faculty_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_gradebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guidebook-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_gradebook_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-guidebook-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_home_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_log_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_log_out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_log_out_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_log_out_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_name_tag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-name-tag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,11 +169,23 @@
   <data name="icon_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_schedule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_schedule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_schedule_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_schedule_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>CourseCatalog</value>
+  </data>
+  <data name="Univeristy_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Univeristy_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UniversityImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\University-of-Alabama-EngineeringResearchCenter-01.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

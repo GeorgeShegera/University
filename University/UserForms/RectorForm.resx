@@ -120,6 +120,19 @@
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAAVxJREFUaEPtmjtuwkAURR2KtJGgZSMRC0ubBgg7YQU0KAugyKegowW2Qe61GGSI
+        bd5AHN8Hc6QjNAXWOzIfazQZeIQTuIU7ETdwDDmbmTdYdjEFR9AM6/mm53ylwQByJs5mJtSrET1XCmmY
+        FKJGClHjBd5ECHndv5pQDokihTTIFM7gU74yohjyATnTAppjFEP6cAU5F6O68CyKISQ6RjWEFGM+YW2M
+        cggxx6iHkNOYHvyFhxByNsZLCCnGfMGjGE8hpDLGWwgpjbkm5AF+w3CNtuT/zGFxCR3IL17xom14dUhb
+        /PlHqw0qf4Y9hVRGEC8htRHEQ8hpROnzlnpIMaL2cV45xBxBVEOiIohiSHQEUQxZQs7kfvPhHc6h++2g
+        i0gh/8BNbGIzImou1ZDouVJIw6QQNe43JByq4UEWFcKhmnW+MsJzUaFezSE0w8NdjAl3RkHeCUYYD55l
+        2Q+ccZGx7hembQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="guna2ShadowForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -128,5 +141,8 @@
   </metadata>
   <metadata name="guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>461, 17</value>
+  </metadata>
+  <metadata name="guna2DragControl3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>619, 17</value>
   </metadata>
 </root>

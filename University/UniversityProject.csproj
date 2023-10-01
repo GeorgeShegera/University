@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -185,6 +185,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\erro.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_schedule_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_faculty_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_faculty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gradebook_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gradebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_course_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_course.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guidebook-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-guidebook-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_log_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_log_out_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Univeristy_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
