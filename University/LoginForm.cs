@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using UniversityClassLib;
 using UniversityProject.Classes;
 using UniversityProject.UserForms;
+using static UniversityProject.Classes.Validator;
 
 namespace UniversityProject
 {
@@ -24,25 +25,21 @@ namespace UniversityProject
         public LoginForm()
         {
             InitializeComponent();
-            dtpBirthDate.MinDate = new DateTime(1920, 1, 1);
+            dtpBirthDate.MinDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Now;
         }
 
         private void CheckLoginPanel()
-            => btnLogin.Enabled = tbUsernameEmailLogin.Text.Length > 0 &&
-                                  tbPasswordLogin.Text.Length > 6 &&
-                                  tbUsernameEmailLogin.Text.Length <= 32 &&
-                                  tbUsernameEmailLogin.Text.Length <= 32;
+            => btnLogin.Enabled = ValidatePassword(tbPasswordLogin.Text) &&
+                                  (ValidateEmail(tbUsernameEmailLogin.Text) ||
+                                  ValidateUsername(tbUsernameEmailLogin.Text));
 
         private void Panel_CheckFirstRegister()
         {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            btnContinue.Enabled = tbName.Text.Length > 0 &&
-                                  tbSurname.Text.Length > 0 &&
-                                  tbName.Text.Length < 20 &&
-                                  tbSurname.Text.Length < 20 &&
+            btnContinue.Enabled = ValidateFirstName(tbName.Text) &&
+                                  ValidateLastName(tbSurname.Text) &&
                                   dtpBirthDate.Format != DateTimePickerFormat.Custom &&
-                                  regex.Match(tbEmail.Text).Success;
+                                  ValidateEmail(tbEmail.Text);
         }
 
         private void TextBox_CheckPassword(Guna2TextBox textBox)

@@ -12,11 +12,17 @@ using System.IO;
 using Newtonsoft.Json;
 using System.IO.Ports;
 using UniversityProject.Classes;
+using System.Runtime.CompilerServices;
 
 namespace UniversityProject
 {
     internal static class Program
     {
+        public static DateTime ToDateTime(this DateOnly dateOnly)
+        {
+            return new DateTime(dateOnly.Year, dateOnly.Month, dateOnly.Day);
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

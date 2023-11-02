@@ -88,10 +88,11 @@
             this.panel_Register2.Controls.Add(this.tbUsername);
             this.panel_Register2.Controls.Add(this.lb_Register);
             this.panel_Register2.Controls.Add(this.btnCreateAccount);
-            this.panel_Register2.Location = new System.Drawing.Point(279, 42);
+            this.panel_Register2.Location = new System.Drawing.Point(576, 42);
             this.panel_Register2.Name = "panel_Register2";
             this.panel_Register2.Size = new System.Drawing.Size(224, 350);
             this.panel_Register2.TabIndex = 9;
+            this.panel_Register2.Visible = false;
             // 
             // lbGoBack_Panel2
             // 
@@ -497,7 +498,7 @@
             this.panel_Register1.Controls.Add(this.label3);
             this.panel_Register1.Controls.Add(this.tbName);
             this.panel_Register1.Controls.Add(this.btnContinue);
-            this.panel_Register1.Location = new System.Drawing.Point(12, 42);
+            this.panel_Register1.Location = new System.Drawing.Point(576, 42);
             this.panel_Register1.Name = "panel_Register1";
             this.panel_Register1.Size = new System.Drawing.Size(224, 350);
             this.panel_Register1.TabIndex = 9;
@@ -636,12 +637,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(840, 404);
-            this.Controls.Add(this.panel_Register1);
-            this.Controls.Add(this.panel_Register2);
             this.Controls.Add(this.panel_Login);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.pbUniversity);
+            this.Controls.Add(this.panel_Register2);
+            this.Controls.Add(this.panel_Register1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

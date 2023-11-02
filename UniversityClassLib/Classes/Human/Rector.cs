@@ -21,7 +21,7 @@ namespace UniversityClassLib
             TenureStart = tenureStart;
         }
 
-        public Rector(User user, RectorStatus status = default, 
+        public Rector(User user, RectorStatus status = default,
                       DateOnly tenureStart = default)
                 : base(user)
         {

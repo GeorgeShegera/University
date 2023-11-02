@@ -92,6 +92,26 @@ namespace UniversityProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_cancel {
+            get {
+                object obj = ResourceManager.GetObject("icon_cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_cancel_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon_cancel_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_course {
             get {
                 object obj = ResourceManager.GetObject("icon_course", resourceCulture);
@@ -232,6 +252,26 @@ namespace UniversityProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_save {
+            get {
+                object obj = ResourceManager.GetObject("icon_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_save_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon_save_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_schedule {
             get {
                 object obj = ResourceManager.GetObject("icon_schedule", resourceCulture);
@@ -245,6 +285,26 @@ namespace UniversityProject.Properties {
         internal static System.Drawing.Bitmap icon_schedule_blue {
             get {
                 object obj = ResourceManager.GetObject("icon_schedule_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_submit {
+            get {
+                object obj = ResourceManager.GetObject("icon_submit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_submit_blue {
+            get {
+                object obj = ResourceManager.GetObject("icon_submit_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -270,6 +330,16 @@ namespace UniversityProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon info_red {
+            get {
+                object obj = ResourceManager.GetObject("info_red", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CourseCatalog.
         /// </summary>
         internal static string String {
@@ -285,6 +355,16 @@ namespace UniversityProject.Properties {
             get {
                 object obj = ResourceManager.GetObject("Univeristy_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon university {
+            get {
+                object obj = ResourceManager.GetObject("university", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

@@ -10,6 +10,8 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using UniversityClassLib;
+using System.Threading;
+using System.Web;
 
 namespace UniversityProject.Classes
 {
@@ -56,12 +58,11 @@ namespace UniversityProject.Classes
                     if (reader.Read())
                     {
                         userType = Convert.ToString(reader["Type"]);
-                        DateTime birthD = Convert.ToDateTime(reader["BirthDate"]);
                         user = new User(Convert.ToInt32(reader["Id"]))
                         {
                             Name = Convert.ToString(reader["Name"]),
                             Surname = Convert.ToString(reader["Surname"]),
-                            BirthDate = new DateOnly(birthD.Year, birthD.Month, birthD.Day),
+                            BirthDate = DateOnly.FromDateTime(Convert.ToDateTime(reader["BirthDate"])),
                             Username = Convert.ToString(reader["Username"]),
                             Password = password,
                             Email = Convert.ToString(reader["Email"]),
@@ -102,6 +103,44 @@ namespace UniversityProject.Classes
                 }
             }
             return rector;
+        }
+
+        internal static bool CheckUsernameNotExists(string username)
+        {
+            int count = 0;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "CheckUsernameExists";
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@username", username));
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return count == 0;
+        }
+
+        internal static bool CheckEmailNotExists(string email)
+        {
+            int count = 0;
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "CheckEmailExists";
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandText = query,
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("@email", email));
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            return count == 0;
         }
     }
 }

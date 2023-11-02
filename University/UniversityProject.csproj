@@ -48,8 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net48\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -71,8 +71,8 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Classes\PasswordEncryptor.cs" />
+    <Compile Include="Classes\Validator.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +234,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-home-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-cancel-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-save-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-submit-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-submit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\university.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,3 +14,4 @@ E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Numerics.Vectors.xml
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\obj\Debug\UniversityClassLib.csproj.CopyComplete
+E:\Programming\C# .NET\Projects\WinForms Projects\University\UniversityClassLib\bin\Debug\UniversityClassLib.dll.config
