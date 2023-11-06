@@ -75,6 +75,8 @@ namespace UniversityProject.UserForms
                 EnableRectorData(false);
                 SetRectorData();
                 errProvider.Clear();
+                SetValidTextBoxColor(tbFirstName, tbLastName, tbUsername,
+                                     tbPassword, tbEmail);
             }
             else
             {
@@ -206,7 +208,7 @@ namespace UniversityProject.UserForms
             tbVerPassword.Clear();
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void BtnLogout_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
                 "Are you sure you want to sign out?",
@@ -217,7 +219,7 @@ namespace UniversityProject.UserForms
                 Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             errProvider.Clear();
             if (IsValidInput())
@@ -226,8 +228,17 @@ namespace UniversityProject.UserForms
                 pnlEdit.Visible = true;
                 errProvider.Clear();
                 EnableRectorData(false);
-
+                // Change obj data
+                Rector.Name = tbFirstName.Text;
+                Rector.Surname = tbLastName.Text;
+                Rector.BirthDate = DateOnly.FromDateTime(dtpBirthDate.Value);
+                Rector.Username = tbUsername.Text;
+                Rector.Password = PasswordEncryptor.Encrypt(tbPassword.Text);
+                Rector.Email = tbEmail.Text;
+                Rector.TenureStart = DateOnly.FromDateTime(dtpTenureStart.Value);
+                Rector.Status = (RectorStatus)cbStatuses.SelectedIndex + 1;
                 // Change db data
+                UpdateRectorData(Rector);
             }
         }
 
@@ -242,13 +253,19 @@ namespace UniversityProject.UserForms
         {
             if (isValid)
             {
-                control.BorderColor = Color.Gray;                
+                control.BorderColor = Color.Gray;
             }
             else
             {
                 control.BorderColor = Color.Red;
                 errProvider.SetError(control, message);
             }
+        }
+
+        private void SetValidTextBoxColor(params Guna2TextBox[] controls)
+        {
+            foreach (Guna2TextBox control in controls)
+                control.BorderColor = Color.Gray;
         }
 
         private bool IsValidInput()
@@ -261,12 +278,19 @@ namespace UniversityProject.UserForms
                      tbLastName, ValidateLastName) &
                    (ValidateAndSetError("Username must have at least 1 and less than 32 letters",
                      tbUsername, ValidateUsername) &&
+                   (tbUsername.Text.Equals(Rector.Username) ||
                    ValidateAndSetError("This username is already taken",
-                     tbUsername, CheckUsernameNotExists)) &
+                     tbUsername, CheckUsernameNotExists))) &
                    (ValidateAndSetError("Email is not correct",
                      tbEmail, ValidateEmail) &&
+                   (tbEmail.Text.Equals(Rector.Email) ||
                    ValidateAndSetError("This email is already taken",
-                    tbEmail, CheckEmailNotExists));
+                    tbEmail, CheckEmailNotExists)));
+        }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

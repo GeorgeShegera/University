@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using UniversityClassLib;
 using System.Threading;
 using System.Web;
+using System.Xml.Serialization;
 
 namespace UniversityProject.Classes
 {
@@ -103,6 +104,34 @@ namespace UniversityProject.Classes
                 }
             }
             return rector;
+        }
+
+        internal static void UpdateRectorData(Rector rector)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = "UpdateRectorData";
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = query,
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddRange(new SqlParameter[]
+                {
+                    new SqlParameter("@id", rector.Id),
+                    new SqlParameter("@name", rector.Name),
+                    new SqlParameter("@surname", rector.Surname),
+                    new SqlParameter("@birthDate", rector.BirthDate.ToDateTime()),
+                    new SqlParameter("@username", rector.Username),
+                    new SqlParameter("@password", rector.Password),
+                    new SqlParameter("@email", rector.Email),
+                    new SqlParameter("@statusId", Convert.ToInt32(rector.Status)),
+                    new SqlParameter("@tenureStart", rector.TenureStart.ToDateTime())
+                });
+                cmd.ExecuteNonQuery();
+            }
         }
 
         internal static bool CheckUsernameNotExists(string username)

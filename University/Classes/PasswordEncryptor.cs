@@ -39,10 +39,10 @@ namespace UniversityProject.Classes
             desCryptoProvider.Mode = CipherMode.ECB;
             byteBuff = Encoding.UTF8.GetBytes(source);
 
-            string encoded =
-                Convert.ToBase64String(desCryptoProvider.CreateEncryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
+            string encoded = Convert.ToBase64String(byteBuff);
             return encoded;
         }
+
 
         public static string Decrypt(string encodedText)
         {
@@ -60,5 +60,6 @@ namespace UniversityProject.Classes
             string plaintext = Encoding.UTF8.GetString(desCryptoProvider.CreateDecryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
             return plaintext;
         }
+
     }
 }

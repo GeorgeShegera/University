@@ -89,6 +89,7 @@
             this.labelFaculties = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.pnlMenuBtns.SuspendLayout();
@@ -280,6 +281,7 @@
             this.btnSchedule.Text = "Schedule";
             this.btnSchedule.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSchedule.TextOffset = new System.Drawing.Point(5, 0);
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             this.btnSchedule.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnMenu_MouseClick);
             // 
             // btnCourses
@@ -392,7 +394,7 @@
             this.btnLogout.Text = "Log out";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(5, 0);
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // pnlHome
             // 
@@ -781,7 +783,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnCancelSave
             // 
@@ -929,6 +931,7 @@
             // 
             // pnlSelectGroupOrLecturer
             // 
+            this.pnlSelectGroupOrLecturer.Controls.Add(this.label8);
             this.pnlSelectGroupOrLecturer.Controls.Add(this.gbSelect);
             this.pnlSelectGroupOrLecturer.Controls.Add(this.labelFaculties);
             this.pnlSelectGroupOrLecturer.Controls.Add(this.guna2ComboBox1);
@@ -949,7 +952,6 @@
             this.gbSelect.Name = "gbSelect";
             this.gbSelect.Size = new System.Drawing.Size(669, 347);
             this.gbSelect.TabIndex = 4;
-            this.gbSelect.Text = "Choose group or lecturer";
             // 
             // btnSelect
             // 
@@ -1068,6 +1070,16 @@
             this.errProvider.ContainerControl = this;
             this.errProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("errProvider.Icon")));
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 2);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(244, 30);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Choose group or lecturer";
+            // 
             // RectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1163,5 +1175,6 @@
         private System.Windows.Forms.ColumnHeader columnStatus;
         private Guna.UI2.WinForms.Guna2Button btnSelect;
         private System.Windows.Forms.ErrorProvider errProvider;
+        private System.Windows.Forms.Label label8;
     }
 }
