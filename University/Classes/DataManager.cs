@@ -13,6 +13,11 @@ using UniversityClassLib;
 using System.Threading;
 using System.Web;
 using System.Xml.Serialization;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
+using static UniversityProject.Classes.PasswordEncryptor;
+
 
 namespace UniversityProject.Classes
 {
@@ -65,7 +70,7 @@ namespace UniversityProject.Classes
                             Surname = Convert.ToString(reader["Surname"]),
                             BirthDate = DateOnly.FromDateTime(Convert.ToDateTime(reader["BirthDate"])),
                             Username = Convert.ToString(reader["Username"]),
-                            Password = password,
+                            Password = Decrypt(password),
                             Email = Convert.ToString(reader["Email"]),
                         };
                     }
@@ -125,7 +130,7 @@ namespace UniversityProject.Classes
                     new SqlParameter("@surname", rector.Surname),
                     new SqlParameter("@birthDate", rector.BirthDate.ToDateTime()),
                     new SqlParameter("@username", rector.Username),
-                    new SqlParameter("@password", rector.Password),
+                    new SqlParameter("@password", Encrypt(rector.Password)),
                     new SqlParameter("@email", rector.Email),
                     new SqlParameter("@statusId", Convert.ToInt32(rector.Status)),
                     new SqlParameter("@tenureStart", rector.TenureStart.ToDateTime())
@@ -170,6 +175,31 @@ namespace UniversityProject.Classes
                 count = Convert.ToInt32(cmd.ExecuteScalar());
             }
             return count == 0;
+        }
+
+        internal static List<Faculty> GetFaculties()
+        {
+            List<Faculty> faculties = new List<Faculty>();
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string query = @"SELECT * FROM [Faculties] AS F 
+                                 WHERE F.UniversityId = @universityId;";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add(new SqlParameter("@universityId", universityId));
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        faculties.Add(new Faculty(
+                            Convert.ToInt32(reader["Id"]),
+                            Convert.ToString(reader["Name"]),
+                            Convert.ToInt32(reader["UniversityId"])
+                        ));
+                    }
+                }
+            }
+            return faculties;
         }
     }
 }

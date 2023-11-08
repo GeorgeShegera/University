@@ -24,7 +24,7 @@ namespace UniversityProject
     {
         public LoginForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
             dtpBirthDate.MinDate = new DateTime(1900, 1, 1);
             dtpBirthDate.MaxDate = DateTime.Now;
         }

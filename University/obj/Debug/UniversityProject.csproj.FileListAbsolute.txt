@@ -25,3 +25,6 @@ E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debu
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\Newtonsoft.Json.dll
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\Newtonsoft.Json.xml
 E:\Programming\C# .NET\Projects\WinForms Projects\University\University\bin\Debug\UniversityClassLib.dll.config
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.Forms.FacultiesEditorForm.resources
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.RectorDataForm.resources
+E:\Programming\C# .NET\Projects\WinForms Projects\University\University\obj\Debug\UniversityProject.Forms.SelectGroupLecturerForm.resources

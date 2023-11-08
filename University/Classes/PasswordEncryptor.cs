@@ -36,10 +36,11 @@ namespace UniversityProject.Classes
 
             byteHash = hashMD5Provider.ComputeHash(Encoding.UTF8.GetBytes(Key));
             desCryptoProvider.Key = byteHash;
-            desCryptoProvider.Mode = CipherMode.ECB;
+            desCryptoProvider.Mode = CipherMode.ECB; //CBC, CFB
             byteBuff = Encoding.UTF8.GetBytes(source);
 
-            string encoded = Convert.ToBase64String(byteBuff);
+            string encoded =
+                Convert.ToBase64String(desCryptoProvider.CreateEncryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
             return encoded;
         }
 
@@ -54,12 +55,11 @@ namespace UniversityProject.Classes
 
             byteHash = hashMD5Provider.ComputeHash(Encoding.UTF8.GetBytes(Key));
             desCryptoProvider.Key = byteHash;
-            desCryptoProvider.Mode = CipherMode.ECB;
+            desCryptoProvider.Mode = CipherMode.ECB; //CBC, CFB
             byteBuff = Convert.FromBase64String(encodedText);
 
             string plaintext = Encoding.UTF8.GetString(desCryptoProvider.CreateDecryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
             return plaintext;
         }
-
     }
 }

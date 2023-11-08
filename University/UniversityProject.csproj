@@ -89,6 +89,24 @@
     <Compile Include="Classes\DataManager.cs" />
     <Compile Include="Classes\PasswordEncryptor.cs" />
     <Compile Include="Classes\Validator.cs" />
+    <Compile Include="Forms\FacultiesEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FacultiesEditorForm.Designer.cs">
+      <DependentUpon>FacultiesEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RectorDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RectorDataForm.Designer.cs">
+      <DependentUpon>RectorDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectGroupLecturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectGroupLecturerForm.Designer.cs">
+      <DependentUpon>SelectGroupLecturerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +115,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserForms\RectorForm.cs">
+    <Compile Include="Forms\UserForms\RectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\RectorForm.Designer.cs">
+    <Compile Include="Forms\UserForms\RectorForm.Designer.cs">
       <DependentUpon>RectorForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FacultiesEditorForm.resx">
+      <DependentUpon>FacultiesEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RectorDataForm.resx">
+      <DependentUpon>RectorDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectGroupLecturerForm.resx">
+      <DependentUpon>SelectGroupLecturerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,7 +143,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserForms\RectorForm.resx">
+    <EmbeddedResource Include="Forms\UserForms\RectorForm.resx">
       <DependentUpon>RectorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

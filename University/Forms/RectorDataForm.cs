@@ -1,5 +1,4 @@
 ﻿using Guna.UI2.WinForms;
-using Guna.UI2.WinForms.Suite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,28 +8,24 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using UniversityClassLib;
 using UniversityProject.Classes;
-using static UniversityProject.Classes.Validator;
 using static UniversityProject.Classes.DataManager;
-using System.Drawing.Imaging;
+using static UniversityProject.Classes.Validator;
+using static UniversityProject.Classes.PasswordEncryptor;
 
-namespace UniversityProject.UserForms
+namespace UniversityProject
 {
-    public partial class RectorForm : Form
+    public partial class RectorDataForm : Form
     {
-        private readonly Color selectedColor = Color.FromArgb(148, 217, 242);
         private Rector Rector { get; set; }
-
-        public RectorForm(Rector rector)
+        public RectorDataForm(Rector rector)
         {
             Rector = rector;
             InitializeComponent();
             dtpBirthDate.MaxDate = DateTime.Now;
             dtpTenureStart.MaxDate = DateTime.Now;
-            Icon = Properties.Resources.university;
             cbStatuses.Items.AddRange(new string[]
             {
                 "Active",
@@ -56,6 +51,20 @@ namespace UniversityProject.UserForms
             dtpTenureStart.Value = Rector.TenureStart.ToDateTime();
         }
 
+        private void EnableRectorData(bool enable)
+        {
+            tbFirstName.Enabled = enable;
+            tbLastName.Enabled = enable;
+            dtpBirthDate.Enabled = enable;
+            tbUsername.Enabled = enable;
+            tbEmail.Enabled = enable;
+            tbPassword.Enabled = enable;
+            if (!enable) tbPassword.UseSystemPasswordChar = true;
+            tbPassword.IconRight = enable ? Properties.Resources.icon_view : null;
+            dtpTenureStart.Enabled = enable;
+            cbStatuses.Enabled = enable;
+        }
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             AcceptButton = btnSubmitPass;
@@ -63,6 +72,13 @@ namespace UniversityProject.UserForms
             pnlEditPassword.Visible = true;
             CancelButton = btnCancelPassword;
         }
+
+        private void SetValidTextBoxColor(params Guna2TextBox[] controls)
+        {
+            foreach (Guna2TextBox control in controls)
+                control.BorderColor = Color.Gray;
+        }
+
 
         private void BtnCancelPassword_Click(object sender, EventArgs e)
         {
@@ -84,71 +100,7 @@ namespace UniversityProject.UserForms
             }
         }
 
-        private void BtnMenu_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (!(sender is Guna2Button btn)) return;
-            foreach (var control in pnlMenuBtns.Controls)
-            {
-                if (control is Guna2Button prevBtn && prevBtn.IndicateFocus)
-                {
-                    prevBtn.HoverState.FillColor = Color.FromArgb(174, 214, 227);
-                    prevBtn.FillColor = Color.White;
-                    prevBtn.IndicateFocus = false;
-                    ChangeSelectedMenuBtn(prevBtn, false);
-                }
-            }
-            btn.FillColor = selectedColor;
-            btn.HoverState.FillColor = selectedColor;
-            btn.IndicateFocus = true;
-            ChangeSelectedMenuBtn(btn, true);
-        }
-
-        private void ChangeMenuBtnImg(Guna2Button button, bool selected,
-                                        Bitmap selectedIcon, Bitmap icon)
-            => button.Image = selected ? selectedIcon : icon;
-
-
-        private void ChangeSelectedMenuBtn(Guna2Button btn, bool selected)
-        {
-            Bitmap selectedIcon = null;
-            Bitmap simpleIcon = null;
-            switch (btn.Tag as string)
-            {
-                case "Home":
-                    {
-                        selectedIcon = Properties.Resources.icon_home_blue;
-                        simpleIcon = Properties.Resources.icon_home;
-                    }
-                    break;
-                case "Schedule":
-                    {
-                        selectedIcon = Properties.Resources.icon_schedule_blue;
-                        simpleIcon = Properties.Resources.icon_schedule;
-                    }
-                    break;
-                case "Courses":
-                    {
-                        selectedIcon = Properties.Resources.icon_course_blue;
-                        simpleIcon = Properties.Resources.icon_course;
-                    }
-                    break;
-                case "Gradebooks":
-                    {
-                        selectedIcon = Properties.Resources.icon_gradebook_blue;
-                        simpleIcon = Properties.Resources.icon_gradebook;
-                    }
-                    break;
-                case "Faculties":
-                    {
-                        selectedIcon = Properties.Resources.icon_faculty_blue;
-                        simpleIcon = Properties.Resources.icon_faculty;
-                    }
-                    break;
-            }
-            ChangeMenuBtnImg(btn, selected, selectedIcon, simpleIcon);
-        }
-
-        private void TbVerPassword_TextChanged(object sender, EventArgs e)
+        private void TbPassword_TextChanged(object sender, EventArgs e)
         {
             if (!(sender is Guna2TextBox textBox)) return;
             if (string.IsNullOrEmpty(textBox.Text))
@@ -160,7 +112,7 @@ namespace UniversityProject.UserForms
             else if (textBox.UseSystemPasswordChar) textBox.IconRight = Properties.Resources.icon_view;
         }
 
-        private void TbVerPassword_IconRightClick(object sender, EventArgs e)
+        private void TbPassword_IconRightClick(object sender, EventArgs e)
         {
             if (!(sender is Guna2TextBox textBox)) return;
             if (textBox.UseSystemPasswordChar)
@@ -176,22 +128,10 @@ namespace UniversityProject.UserForms
             textBox.UseSystemPasswordChar = !textBox.UseSystemPasswordChar;
         }
 
-        private void EnableRectorData(bool enable)
-        {
-            tbFirstName.Enabled = enable;
-            tbLastName.Enabled = enable;
-            dtpBirthDate.Enabled = enable;
-            tbUsername.Enabled = enable;
-            tbEmail.Enabled = enable;
-            tbPassword.Enabled = enable;
-            dtpTenureStart.Enabled = enable;
-            cbStatuses.Enabled = enable;
-        }
-
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             CancelButton = btnCancelSave;
-            if (PasswordEncryptor.Encrypt(tbVerPassword.Text) != Rector.Password)
+            if (tbVerPassword.Text != Rector.Password)
             {
                 SoundPlayer player = new SoundPlayer(Properties.Resources.erro);
                 player.Play();
@@ -208,17 +148,6 @@ namespace UniversityProject.UserForms
             tbVerPassword.Clear();
         }
 
-        private void BtnLogout_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to sign out?",
-                "Log out",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                Close();
-        }
-
         private void BtnSave_Click(object sender, EventArgs e)
         {
             errProvider.Clear();
@@ -227,13 +156,14 @@ namespace UniversityProject.UserForms
                 pnlEditeSave.Visible = false;
                 pnlEdit.Visible = true;
                 errProvider.Clear();
+                tbPassword.IconRight = null;
                 EnableRectorData(false);
                 // Change obj data
                 Rector.Name = tbFirstName.Text;
                 Rector.Surname = tbLastName.Text;
                 Rector.BirthDate = DateOnly.FromDateTime(dtpBirthDate.Value);
                 Rector.Username = tbUsername.Text;
-                Rector.Password = PasswordEncryptor.Encrypt(tbPassword.Text);
+                Rector.Password = tbPassword.Text;
                 Rector.Email = tbEmail.Text;
                 Rector.TenureStart = DateOnly.FromDateTime(dtpTenureStart.Value);
                 Rector.Status = (RectorStatus)cbStatuses.SelectedIndex + 1;
@@ -262,12 +192,6 @@ namespace UniversityProject.UserForms
             }
         }
 
-        private void SetValidTextBoxColor(params Guna2TextBox[] controls)
-        {
-            foreach (Guna2TextBox control in controls)
-                control.BorderColor = Color.Gray;
-        }
-
         private bool IsValidInput()
         {
             return ValidateAndSetError("Password must be at least 7 and less than 32 symbols",
@@ -286,11 +210,6 @@ namespace UniversityProject.UserForms
                    (tbEmail.Text.Equals(Rector.Email) ||
                    ValidateAndSetError("This email is already taken",
                     tbEmail, CheckEmailNotExists)));
-        }
-
-        private void btnSchedule_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
